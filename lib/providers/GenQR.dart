@@ -36,21 +36,31 @@ class _GenQRState extends State<GenQR>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: 
                   [ 
+                    // Text("${urlController.text}"),
                     if(urlController.text.isNotEmpty)
-                      // QrImage(data: urlController.text,size:200,),
-                      SizedBox(height:10,),
-                      Container( 
-                        padding:EdgeInsets.only(left:10,right:10),
-                        child: TextField( 
-                          controller: urlController,
-                          decoration: InputDecoration( 
-                            hintText:'Enter your data',
-                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))
-                          )
+                      QrImageView(data: urlController.text,size:200,),
+                    SizedBox(height:10,),
+                    Container( 
+                      padding:EdgeInsets.only(left:10,right:10),
+                      child: TextField( 
+                        controller: urlController,
+                        // onChanged: (value) {
+                        //   setState(() {
+                            
+                        //   });
+                        // },
+                        decoration: InputDecoration( 
+                          hintText:'Enter your data',
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))
                         )
-                      ),
-                      SizedBox(height:10),
-                      ElevatedButton(onPressed: (){},child:Text('Generate QR Code'))
+                      )
+                    ),
+                    SizedBox(height:10),
+                      ElevatedButton(onPressed: (){
+                        setState(() {
+                          
+                        });
+                      },child:Text('Generate QR Code'))
                   ],
                 )
             )
